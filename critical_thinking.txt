@@ -1,0 +1,15 @@
+1. Hallucination Risk:
+Summarization models may generate information not present in the source text,
+especially for long or ambiguous documents. To mitigate this, I use chunk-based
+summarization and instruct the model to only summarize the provided content.
+
+2. Prompt Injection:
+A malicious user could embed instructions inside the document to manipulate
+the model output. This can be mitigated by separating system prompts from user
+content and applying strict prompt templates and input sanitization.
+ 
+3. Cost Optimization:
+First, I would reduce costs by chunking documents efficiently to minimize
+LLM calls. Second, I would use smaller models for short documents. Third,
+I would cache summaries for repeated documents.
+
