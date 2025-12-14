@@ -1,0 +1,10 @@
+#Document Summarization Architecture (AWS + GenAI)
+1. User uploads a document.
+2. The document is stored in Amazon S3.
+3. An S3 event triggers an AWS Lambda function.
+4. Lambda reads the document and checks its size.
+5. If the document is large, Lambda splits it into chunks.
+6. Each chunk is sent to a GenAI model (Amazon Bedrock).
+7. The model generates summaries for each chunk.
+8. Lambda combines all summaries into a final summary.
+9. The final summary is stored in S3 or returned to the user.
